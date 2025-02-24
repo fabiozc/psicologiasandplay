@@ -1,0 +1,7 @@
+name: psicologiasandplay
+recipe: wordpress
+config:
+  webroot: .
+proxy:
+  appserver:
+    - psicologiasandplay.dev
