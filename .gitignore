@@ -1,0 +1,8 @@
+.env
+/.env
+/.lando.yml
+**/.DS_Store
+/.htaccess
+/composer.json
+/composer.lock
+/vendor/
