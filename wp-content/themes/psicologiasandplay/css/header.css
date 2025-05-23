@@ -1,0 +1,16 @@
+/* ==== Header Layout ==== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-sm) var(--space-2xs);
+  background: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+/* ==== Site Branding ==== */
+.site-branding {
+  display: flex;
+  align-items: center;
+}

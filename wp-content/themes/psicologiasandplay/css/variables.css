@@ -1,0 +1,22 @@
+:root {
+    --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  
+    --border-radius-large: 100px;
+    --border-radius-medium: 16px;
+    --border-radius-small: 8px;
+
+    --spacing-large: 48px;
+    --spacing-medium: 24px;
+    --spacing-small: 12px;
+
+    --container-width: 1200px;
+    --container-xl: 1200px;
+
+    --shadow-depth-1: 0px 4px 20px 0px rgba(0,0,0,0.15);
+    --shadow-depth-2: 0px 20px 30px -10px rgba(0,0,0,0.15);
+
+    --typography-font-size-large: 2rem;
+    --typography-font-size-medium: 1.25rem;
+    --typography-font-weight-semibold: 700;
+}

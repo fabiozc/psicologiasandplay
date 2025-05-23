@@ -5,10 +5,22 @@ Author URI: https://fabiozc.com
 Version: 0.1
 */
 
-/*
- * Link styles
- * https://github.com/WordPress/gutenberg/issues/42319
- */
+/* Import base styles */
+@import url('css/variables.css');
+@import url('css/base.css');
+@import url('css/layout.css');
+@import url('css/typography.css');
+@import url('css/colors.css');
+@import url('css/spacing.css');
+
+/* Import structural styles */
+@import url('css/header.css');
+@import url('css/navigation.css');
+
+/* Import page styles */
+@import url('css/page-home.css');
+
+
 a {
 	text-decoration-thickness: 1px !important;
 	text-underline-offset: .1em;

@@ -1,0 +1,115 @@
+:root {
+    /* === Brand Primary === */
+    --color-brand-primary-100: #FFE3CA;
+    --color-brand-primary-200: #FFD0A6;
+    --color-brand-primary-300: #FFC07C;
+    --color-brand-primary-400: #FFAC57;
+    --color-brand-primary-500: #FF9933;
+    --color-brand-primary-600: #E17F2A;
+    --color-brand-primary-700: #BA611C;
+    --color-brand-primary-800: #8F4714;
+    --color-brand-primary-900: #6B320E;
+    --color-brand-primary: #F57E1F;
+  
+    /* === Brand Secondary === */
+    --color-brand-secondary-100: #E5D7D0;
+    --color-brand-secondary-200: #D3BEB1;
+    --color-brand-secondary-300: #BFA08E;
+    --color-brand-secondary-400: #A9816A;
+    --color-brand-secondary-500: #965E43;
+    --color-brand-secondary-600: #773E23;
+    --color-brand-secondary-700: #5A2A17;
+    --color-brand-secondary-800: #421D11;
+    --color-brand-secondary-900: #2F140D;
+    --color-brand-secondary: #832F09;
+  
+    /* === Brand Primary Ascent === */
+    --color-brand-primary-ascent-100: #FFE9DE;
+    --color-brand-primary-ascent-200: #FFD4BE;
+    --color-brand-primary-ascent-300: #FFB896;
+    --color-brand-primary-ascent-400: #FF9C6D;
+    --color-brand-primary-ascent-500: #F77C44;
+    --color-brand-primary-ascent-600: #D6642E;
+    --color-brand-primary-ascent-700: #B04D21;
+    --color-brand-primary-ascent-800: #873718;
+    --color-brand-primary-ascent-900: #622611;
+    --color-brand-primary-ascent: #DF6631;
+  
+    /* === Brand Secondary Ascent === */
+    --color-brand-secondary-ascent-100: #D9CFCE;
+    --color-brand-secondary-ascent-200: #BDAFAB;
+    --color-brand-secondary-ascent-300: #9D8D88;
+    --color-brand-secondary-ascent-400: #7D6B64;
+    --color-brand-secondary-ascent-500: #5D4841;
+    --color-brand-secondary-ascent-600: #422F2A;
+    --color-brand-secondary-ascent-700: #2B1C19;
+    --color-brand-secondary-ascent-800: #1C1210;
+    --color-brand-secondary-ascent-900: #110A09;
+    --color-brand-secondary-ascent: #56160A;
+  
+    /* === Background Secondary === */
+    --color-background-secondary-100: #FFFAF2;
+    --color-background-secondary-200: #FFF3E0;
+    --color-background-secondary-300: #FFEFD1;
+    --color-background-secondary-400: #FBE3B3;
+    --color-background-secondary-500: #E6D5AA;
+    --color-background-secondary-600: #C6B79A;
+    --color-background-secondary-700: #A0927F;
+    --color-background-secondary-800: #7A6F64;
+    --color-background-secondary: #FFEBD2;
+  
+    /* === Light Detail === */
+    --color-light-detail-100: #F2F9FF;
+    --color-light-detail-200: #E6F3FF;
+    --color-light-detail-300: #D6EBFF;
+    --color-light-detail-400: #C0E0FF;
+    --color-light-detail-500: #A3D2FF;
+    --color-light-detail-600: #88C2FF;
+    --color-light-detail-700: #6BAFEF;
+    --color-light-detail-800: #528DAF;
+    --color-light-detail-900: #3A6C8F;
+    --color-light-detail: #D2E8FF;
+  
+    /* === Background === */
+    --color-background: #FFFFFF;
+  
+    /* === Text === */
+    --color-text: #545C66;
+  
+    /* === Gradients === */
+    --gradient-brand-primary: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-primary-ascent));
+    --gradient-brand-secondary: linear-gradient(90deg, var(--color-brand-secondary), var(--color-brand-secondary-ascent));
+    --gradient-background-secondary: linear-gradient(90deg, var(--color-background-secondary-200), var(--color-light-detail-300));
+
+        /* === Semantic Text Roles === */
+    --color-text-body: #220804; /* main paragraph text */
+    --color-text-heading: #832F09;         /* serif headers */
+    --color-text-subheading: #5A2A17; /* sans headers */
+    --color-text-muted: #545C66;      /* small, secondary info */
+    --color-text-inverse: #FFFFFF;                              /* for dark backgrounds */
+
+    --color-background-primary: #FFFFFF;
+    --color-background-secondary: #FFEBD2;
+    --color-detail-light: #D2E8FF;
+
+    --color-token-white: #FFFFFF;
+    --color-token-brand-orange: #F57E1F;
+    --color-token-brand-brown: #832F09;
+    --color-token-cream: #FFEBD2;
+    --color-token-light-blue: #D2E8FF;
+
+    --color-text-inverted: #FFFFFF;
+    --color-text-primary: #220804;
+    --color-text-secondary: #545C66;
+    --color-text-tertiary: #93A2B2;
+    --color-text-link: #DF6631;
+    --color-text-link-hover: #F57E1F;
+    --color-text-link-active: #832F09;
+}
+
+.theme-inverse {
+    --color-text-body: #FFFFFF;
+    --color-text-heading: #D2E8FF;
+    --color-text-subheading: #A3D2FF;
+    --color-text-muted: #6BAFEF;
+}

@@ -33,9 +33,8 @@ define('SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT') );
 define('LOGGED_IN_SALT', getenv('LOGGED_IN_SALT') );
 define('NONCE_SALT', getenv('NONCE_SALT') );
 
-
 $table_prefix = 'wp_';
-define( 'WP_DEBUG', getenv('WP_DEBUG') );
+define( 'WP_DEBUG', true );
 
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );

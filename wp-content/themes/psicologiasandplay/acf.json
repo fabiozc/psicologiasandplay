@@ -1,0 +1,53 @@
+{
+  "key": "group_6605b89dbd72e",
+  "title": "Seções da Home",
+  "fields": [
+    {
+      "key": "field_6605b8a00d7e1",
+      "label": "Hero (Bloco Livre)",
+      "name": "hero_content",
+      "type": "wysiwyg"
+    },
+    {
+      "key": "field_6605b8ad0d7e2",
+      "label": "Sobre Renata",
+      "name": "sobre_renata",
+      "type": "wysiwyg"
+    },
+    {
+      "key": "field_6605b8bc0d7e3",
+      "label": "Sobre o Sandplay",
+      "name": "sobre_sandplay",
+      "type": "wysiwyg"
+    },
+    {
+      "key": "field_6605b8c70d7e4",
+      "label": "Cursos (bloco livre)",
+      "name": "cursos_home",
+      "type": "wysiwyg"
+    },
+    {
+      "key": "field_6605b8d50d7e5",
+      "label": "Call to Action",
+      "name": "cta_home",
+      "type": "wysiwyg"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-home.php"
+      }
+    ]
+  ],
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [],
+  "active": true,
+  "description": "",
+  "modified": 1711716200
+}
