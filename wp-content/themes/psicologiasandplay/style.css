@@ -17,6 +17,17 @@ Version: 0.1
 @import url('css/header.css');
 @import url('css/navigation.css');
 
+/* Import section styles */
+@import url('css/section-hero.css');
+@import url('css/section-navigation.css');
+@import url('css/section-about.css');
+@import url('css/section-quote.css');
+@import url('css/section-sandplay.css');
+@import url('css/section-voices.css');
+@import url('css/section-reflections.css');
+@import url('css/section-faq.css');
+@import url('css/section-footer.css');
+
 /* Import page styles */
 @import url('css/page-home.css');
 

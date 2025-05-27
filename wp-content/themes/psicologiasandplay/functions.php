@@ -13,6 +13,17 @@ add_action('after_setup_theme', 'psicologia_sandplay_setup');
 
 function psicologia_sandplay_assets() {
     wp_enqueue_style('psicologia-style', get_stylesheet_uri());
+    
+    // Enqueue JavaScript for home page interactions
+    if (is_page_template('page-home.php') || is_front_page()) {
+        wp_enqueue_script(
+            'home-interactions',
+            get_template_directory_uri() . '/js/home-interactions.js',
+            array(),
+            '1.0.0',
+            true
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'psicologia_sandplay_assets');
 
@@ -30,3 +41,9 @@ add_action('init', 'psicologia_register_menus');
 //     }
 // }
 //add_action( 'init', 'maintenance_redirect' );
+
+add_filter('show_admin_bar', '__return_false');
+function mytheme_enqueue_styles() {
+    wp_enqueue_style('theme-style', get_stylesheet_uri(), [], microtime());
+}
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');

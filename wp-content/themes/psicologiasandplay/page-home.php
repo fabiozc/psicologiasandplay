@@ -12,36 +12,34 @@ get_header();
                     <img src="<?php echo get_template_directory_uri(); ?>/img/logo-vertical.svg" alt="Psicologia Sandplay — Logo" class="hero-logo">
                 </div>
                 <div class="hero-right">
-                    <img src="/path/to/placeholder/img-hero.png" alt="Placeholder Hero Image" class="hero-photo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/img-hero3.png" alt="Hero Image" class="hero-photo">
                 </div>
             </div>
             <div class="hero-quote-content">
-                <?php if (function_exists('the_field')) the_field('hero_content'); ?>
+                <?php 
+                    if (function_exists('the_field') && get_field('hero_content')) {
+                        the_field('hero_content'); 
+                    } else {
+                ?>
+                    <p>Um portal para uma <strong>jornada pela Psicologia</strong> e um convite a uma <strong>imersão no universo</strong> que cada um de nós encerra.</p>
+                <?php
+                    }
+                ?>
             </div>
+            <nav class="hero-navigation">
+                <?php
+                    // Example: Display a WordPress menu named 'Hero Navigation'
+                    // wp_nav_menu( array( 'theme_location' => 'hero-navigation', 'container_class' => 'hero-menu' ) );
+                ?>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'main_menu',
+                    'menu_class' => 'menu',
+                    'container' => false
+                ));
+                ?>
+            </nav>
         </div>
-    </section>
-
-    <!-- Navigation Section - Positioned below the Hero -->
-    <section class="navigation-section">
-        <?php
-            // This section will contain the navigation links shown after the hero.
-            // The actual menu items will likely be pulled from a WordPress menu.
-            // Sticky behavior will be handled with CSS/JS.
-            // Placeholder structure for now:
-        ?>
-        <nav class="hero-navigation">
-            <?php
-                // Example: Display a WordPress menu named 'Hero Navigation'
-                // wp_nav_menu( array( 'theme_location' => 'hero-navigation', 'container_class' => 'hero-menu' ) );
-            ?>
-            <ul>
-                <li><a href="#">Sobre Renata</a></li>
-                <li><a href="#">Psicologia & Terapias</a></li>
-                <li><a href="#">Sandplay</a></li>
-                <li><a href="#">Explorar</a></li>
-                <li><a href="#">Aprendizado</a></li>
-            </ul>
-        </nav>
     </section>
 
     <!-- About Section -->
@@ -113,31 +111,30 @@ get_header();
          <h2 class="section-title">As vozes que moldaram o Sandplay</h2>
         <div class="voices-container">
              <div class="voice-item">
-                <?php
-                    if (function_exists('get_field')) {
-                        $field = get_field_object('carl_jung'); // Assuming Carl G. Jung is 'carl_jung'
-                        if ($field) { ?>
-                            <h3 class="voice-name"><?= esc_html($field['label']); ?></h3>
-                            <div class="voice-content"><?= wp_kses_post($field['value']); ?></div>
-                        <?php }
-                    }
-                ?>
-                 <!-- Image placeholder -->
+                <div class="voice-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/carl-jung.jpg" alt="Carl G. Jung" class="voice-photo">
+                </div>
+                <div class="voice-content">
+                    <h3 class="voice-name">Carl</h3>
+                    <div class="voice-description">
+                        <p>Praesent dapibus turpis nulla, eu accumsan magna efficitur quis. Integer quis sagittis massa. Phasellus venenatis euismod dui. Praesent dapibus turpis nulla, eu accumsan magna efficitur quis. Integer quis sagittis massa.</p>
+                    </div>
+                    <a href="#" class="continue-reading-link">Continue Lendo →</a>
+                </div>
              </div>
              <div class="voice-item">
-                <?php
-                    if (function_exists('get_field')) {
-                        $field = get_field_object('dora_kalff'); // Assuming Dora M. Kalff is 'dora_kalff'
-                        if ($field) { ?>
-                            <h3 class="voice-name"><?= esc_html($field['label']); ?></h3>
-                            <div class="voice-content"><?= wp_kses_post($field['value']); ?></div>
-                        <?php }
-                    }
-                ?>
-                 <!-- Image placeholder -->
+                <div class="voice-content">
+                    <h3 class="voice-name">Dora</h3>
+                    <div class="voice-description">
+                        <p>Praesent dapibus turpis nulla, eu accumsan magna efficitur quis. Integer quis sagittis massa. Phasellus venenatis euismod dui. Praesent dapibus turpis nulla, eu accumsan magna efficitur quis. Integer quis sagittis massa.</p>
+                    </div>
+                    <a href="#" class="continue-reading-link">Continue Lendo →</a>
+                </div>
+                <div class="voice-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/dora-kalff.jpg" alt="Dora M. Kalff" class="voice-photo">
+                </div>
              </div>
         </div>
-        <!-- Content structure (Jung & Kalff info) will be detailed later -->
     </section>
 
     <!-- Reflections and Deepening Section (Grid) -->
@@ -306,10 +303,42 @@ get_header();
 
 </main>
 
-<?php get_footer(); ?>
+<footer class="site-footer">
+  <div class="footer-bg">
+    <div class="footer-content">
+      <div class="footer-left">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/logo-vertical.svg" alt="Psicologia Sandplay — Logo" class="footer-logo">
+        <div class="footer-contact">
+          <h3>Renata Whitaker Horschutz</h3>
+          <p>
+            <span class="footer-icon">&#x1F4CD;</span>
+            Rua Peixoto Gomide, 515 cj. 131<br>
+            Jd. Paulista - CEP 01409-001<br>
+            São Paulo, SP, Brasil
+          </p>
+          <p>
+            <span class="footer-icon">&#x260E;</span> +55 (11) 3284-2568<br>
+            <span class="footer-icon">&#x1F4F2;</span> +55 (11) 99234-5526<br>
+            <span class="footer-icon">&#x2709;</span> <a href="mailto:rewh@uol.com.br">rewh@uol.com.br</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <!-- Replace with your contact form shortcode or HTML -->
+        <form class="footer-form">
+          <input type="text" placeholder="Nome" required>
+          <input type="text" placeholder="Telefone / Whatsapp" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Mensagem" required></textarea>
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2025. Psicologia Sandplay — Todos direitos reservados.</span>
+      <span>Feito com <span style="color:#F57E1F;">&#x1F49B;</span> por FabioZC</span>
+    </div>
+  </div>
+</footer>
 
-<style>
-body.home .main-nav {
-  display: none !important;
-}
-</style>
+<?php get_footer(); ?>

@@ -3,14 +3,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-md) var(--space-sm) var(--space-2xs);
-  background: #fff;
+  padding: var(--spacing-small) var(--spacing-medium);
+  background: var(--color-background);
   position: relative;
-  z-index: 10;
+  z-index: 1000;
+  box-shadow: var(--shadow-depth-1);
 }
 
 /* ==== Site Branding ==== */
 .site-branding {
   display: flex;
   align-items: center;
+}
+
+.site-branding img {
+  max-height: 40px;
+  width: auto;
 }

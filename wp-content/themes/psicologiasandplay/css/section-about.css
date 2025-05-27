@@ -1,0 +1,115 @@
+/* === ABOUT SECTION === */
+.about-section {
+    padding: 64px 0 56px 0;
+    background: var(--color-background-primary);
+}
+
+.about-section .section-title {
+    font-family: var(--font-serif);
+    font-size: var(--typography-font-size-large);
+    color: var(--color-text-heading);
+    font-weight: var(--typography-font-weight-semibold);
+    margin-bottom: var(--spacing-medium);
+    text-align: left;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-medium);
+}
+
+.about-content-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-large);
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-medium);
+}
+
+.about-text-content {
+    flex: 2;
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    color: var(--color-text-body);
+    line-height: 1.6;
+}
+
+.about-text-content p {
+    margin-bottom: 1.2em;
+}
+
+.about-text-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.renata-photo {
+    max-width: 260px;
+    width: 100%;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-depth-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.renata-photo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .about-section {
+        padding: var(--spacing-large) 0;
+    }
+    
+    .about-content-container {
+        flex-direction: column;
+        gap: var(--spacing-medium);
+        text-align: center;
+    }
+    
+    .about-image, 
+    .about-text-content {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .about-text-content {
+        text-align: left;
+    }
+    
+    .renata-photo {
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-section {
+        padding: var(--spacing-medium) 0;
+    }
+    
+    .about-section .section-title {
+        font-size: 1.75rem;
+        text-align: center;
+        padding: 0 16px;
+    }
+    
+    .about-content-container {
+        padding: 0 16px;
+        gap: var(--spacing-small);
+    }
+    
+    .about-text-content {
+        font-size: 1.05rem;
+        text-align: center;
+    }
+    
+    .renata-photo {
+        max-width: 200px;
+    }
+} 

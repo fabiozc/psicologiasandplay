@@ -3,20 +3,49 @@
     --font-serif: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
   
     --border-radius-large: 100px;
+    --border-radius-hero: 30px;
     --border-radius-medium: 16px;
     --border-radius-small: 8px;
 
+    
+    --spacing-xlarge: 90px;
     --spacing-large: 48px;
     --spacing-medium: 24px;
     --spacing-small: 12px;
+    --spacing-xs: 8px;
 
     --container-width: 1200px;
     --container-xl: 1200px;
+    --container-md: 900px;
+    --container-sm: 600px;
 
     --shadow-depth-1: 0px 4px 20px 0px rgba(0,0,0,0.15);
     --shadow-depth-2: 0px 20px 30px -10px rgba(0,0,0,0.15);
+    --shadow-hero: 0px 20px 30px -10px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 8px 32px 0 rgba(0,0,0,0.15);
 
+    --typography-font-size-hero: 32px;
     --typography-font-size-large: 2rem;
     --typography-font-size-medium: 1.25rem;
-    --typography-font-weight-semibold: 700;
+    --typography-font-size-small: 1rem;
+    --typography-font-weight-bold: 700;
+    --typography-font-weight-semibold: 600;
+    --typography-font-weight-medium: 500;
+    --typography-font-weight-regular: 400;
+    --typography-font-weight-light: 300;
+
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    --section-padding: 64px 0 56px 0;
+    --section-padding-mobile: 48px 0 40px 0;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(161deg, #FFEBD1 25.26%, #D2E8FF 76.43%);
+}
+
+/* Hide WordPress Admin Bar */
+#wpadminbar {
+  display: none !important;
 }

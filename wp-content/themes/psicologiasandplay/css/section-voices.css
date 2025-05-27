@@ -1,0 +1,204 @@
+/* === VOICES SECTION === */
+.voices-section {
+    padding: 80px 0;
+    background: var(--color-background-secondary);
+}
+
+.voices-section .section-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--color-text-heading);
+    font-weight: var(--typography-font-weight-semibold);
+    margin-bottom: 60px;
+    text-align: center;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-medium);
+}
+
+.voices-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-medium);
+}
+
+.voice-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.voice-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Alternate layout for even items (Dora Kalff) */
+.voice-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.voice-image {
+    flex-shrink: 0;
+}
+
+.voice-image img {
+    width: 280px;
+    height: 280px;
+    border-radius: 40px;
+    object-fit: cover;
+    box-shadow: var(--shadow-depth-1);
+}
+
+.voice-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.voice-name {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: var(--typography-font-weight-regular);
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+/* Style for Carl Jung - "Carl" in brown, "Jung" in orange */
+.voice-item:first-child .voice-name {
+    color: var(--color-text-heading);
+}
+
+.voice-item:first-child .voice-name::after {
+    content: "Jung";
+    color: var(--color-brand-primary);
+    font-style: italic;
+}
+
+/* Style for Dora Kalff - "Dora" in brown, "Kalff" in orange */
+.voice-item:nth-child(2) .voice-name {
+    color: var(--color-text-heading);
+}
+
+.voice-item:nth-child(2) .voice-name::after {
+    content: "Kalff";
+    color: var(--color-brand-primary);
+    font-style: italic;
+}
+
+.voice-description {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.voice-description p {
+    margin-bottom: 1em;
+}
+
+.voice-description p:last-child {
+    margin-bottom: 0;
+}
+
+.continue-reading-link {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    color: var(--color-brand-primary);
+    text-decoration: none;
+    font-weight: var(--typography-font-weight-medium);
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.continue-reading-link::after {
+    content: '→';
+    transition: transform 0.2s ease;
+}
+
+.continue-reading-link:hover {
+    color: var(--color-text-heading);
+}
+
+.continue-reading-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .voices-section {
+        padding: 60px 0;
+    }
+    
+    .voices-section .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .voice-item,
+    .voice-item:nth-child(even) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+    
+    .voice-image img {
+        width: 220px;
+        height: 220px;
+        border-radius: 30px;
+    }
+    
+    .voice-name {
+        font-size: 2.5rem;
+    }
+    
+    .voice-description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .voices-section {
+        padding: 40px 0;
+    }
+    
+    .voices-section .section-title {
+        font-size: 1.75rem;
+        padding: 0 16px;
+        margin-bottom: 32px;
+    }
+    
+    .voices-container {
+        padding: 0 16px;
+    }
+    
+    .voice-item {
+        gap: 32px;
+        margin-bottom: 48px;
+    }
+    
+    .voice-image img {
+        width: 180px;
+        height: 180px;
+        border-radius: 24px;
+    }
+    
+    .voice-name {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .voice-description {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .continue-reading-link {
+        font-size: 1rem;
+    }
+} 
