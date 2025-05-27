@@ -31,13 +31,13 @@
 </head>
 <body <?php body_class(); ?>>
     <header class="site-header">
-        <div class="site-branding">
-            <a href="<?php echo home_url(); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo-horizontal-small.png" alt="<?php bloginfo('name'); ?> — <?php bloginfo('description'); ?>" class="hero-logo">
-            </a>
-        </div>
-
         <nav class="main-nav">
+            <div class="site-branding">
+                <a href="<?php echo home_url(); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logo-horizontal-small.png" alt="<?php bloginfo('name'); ?> — <?php bloginfo('description'); ?>" class="hero-logo">
+                </a>
+            </div>
+
             <!-- Toggle Button -->
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                <span class="menu-icon">☰</span>

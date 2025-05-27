@@ -1,22 +1,200 @@
 /* ==== Header Layout ==== */
 .site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--spacing-small) var(--spacing-medium);
-  background: var(--color-background);
-  position: relative;
-  z-index: 1000;
-  box-shadow: var(--shadow-depth-1);
+    border-radius: 0; /* No border radius for header */
+    border-top: 1px solid var(--color-token-white);
+    background: linear-gradient(0deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.20) 100%),
+                var(--gradient-background-secondary);
+    box-shadow: var(--shadow-depth-1),
+                0px -1px 0px 0px rgba(0,0,0,0.15) inset;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    width: 100%; /* Full width for header */
+    position: relative;
+    z-index: 1000;
+    
+    /* Center the content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==== Main Navigation - Inherit from hero navigation ==== */
+.site-header .main-nav {
+    /* Remove background since it's now on site-header */
+    background: none;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    
+    /* Layout for header navigation with logo - container width */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-medium); /* 24px horizontal padding */
 }
 
 /* ==== Site Branding ==== */
 .site-branding {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    margin-right: var(--spacing-xxlarge); /* 60px margin right on logo */
+    padding: 20px 0 10px 0; /* Move padding here from site-header */
 }
 
 .site-branding img {
-  max-height: 40px;
-  width: auto;
+    height: 57px; /* Fixed height as requested */
+    width: auto; /* Proportional width */
 }
+
+/* ==== Header Navigation Menu Styles - Inherit from Hero ==== */
+.main-nav .menu {
+    display: flex;
+    gap: 0rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    flex-wrap: nowrap;
+}
+
+.main-nav .menu-item {
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.main-nav .menu-item > a {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: var(--typography-font-weight-medium);
+    color: var(--color-brand-secondary-ascent);
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0.5rem 2.0rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+    z-index: -1;
+}
+
+.main-nav > .menu > .menu-item:hover a {
+    z-index: 1000;
+}
+
+.main-nav .menu-item > a::after {
+    content: '▼';
+    font-family: inherit;
+    font-size: 0.6em;
+    margin-left: 0.3em;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+/* Header-specific: translateY(0) instead of translateY(-100%) for header */
+.main-nav > .menu > .menu-item:hover {
+    transform: translateY(0); /* Keep translateY but with 0 value */
+}
+
+/* Dropdown Menu Styles - Inherit from Hero */
+.main-nav .sub-menu {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: -0.5rem;
+    border-radius: 30px;
+    padding: 0.5rem;
+    padding-top: 65px;
+    background: var(--color-token-white);
+    box-shadow: var(--shadow-depth-2);
+    min-width: 100%;
+}
+
+.main-nav .menu-item:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main-nav .sub-menu .menu-item {
+    width: 100%;
+    background: none;
+    border-radius: 0;
+    transition: none;
+    transform: none !important;
+}
+
+.main-nav .sub-menu .menu-item:hover {
+    background: none;
+    transform: none !important;
+    box-shadow: none;
+}
+
+.main-nav .sub-menu a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: var(--typography-font-weight-medium);
+    color: var(--color-text-body);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.25rem;
+}
+
+.main-nav .sub-menu a::before {
+    content: '→';
+    color: var(--color-brand-primary);
+    margin-right: 0.75rem;
+    font-size: 0.9em;
+    transition: transform 0.2s ease;
+}
+
+.main-nav .sub-menu a::after {
+    display: none;
+}
+
+.main-nav .sub-menu a:hover {
+    color: var(--color-text-link);
+}
+
+.main-nav .sub-menu a:hover::before {
+    transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .site-branding {
+        padding: 15px 0 8px 0; /* Move responsive padding here too */
+    }
+    
+    .site-header .main-nav {
+        padding: 0 var(--spacing-medium); /* 24px on mobile */
+    }
+    
+    .site-branding img {
+        height: 45px; /* Smaller logo on mobile */
+    }
+} 
