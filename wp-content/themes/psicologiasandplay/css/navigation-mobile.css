@@ -1,0 +1,242 @@
+/* === MOBILE NAVIGATION STYLES === */
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    background: var(--color-background-secondary);
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1002;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+    color: var(--color-brand-secondary-ascent);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle:hover {
+    color: var(--color-brand-primary);
+    background: var(--color-background-secondary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Toggle Icon States */
+.menu-toggle .menu-icon {
+    display: block;
+    transition: opacity 0.3s ease;
+    padding-bottom: 7px; /* Adjust hamburger icon position */
+}
+
+.menu-toggle .menu-close {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.menu-toggle.active .menu-icon {
+    display: none;
+}
+
+.menu-toggle.active .menu-close {
+    display: block;
+}
+
+/* === MOBILE RESPONSIVE STYLES === */
+@media (max-width: 900px) {
+    /* Hide hero navigation completely on mobile */
+    .hero-navigation {
+        display: none !important;
+    }
+    
+    /* Remove header background and styling on mobile */
+    .site-header {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        padding: 20px 0 !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1002;
+    }
+    
+    /* Hide logo on mobile */
+    .site-branding {
+        display: none !important;
+    }
+    
+    /* Position hamburger menu */
+    .site-header .main-nav {
+        background: none !important;
+        padding: 0 var(--spacing-medium);
+        justify-content: flex-end; /* Align hamburger to right */
+    }
+    
+    /* Show mobile toggle in header */
+    .menu-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+    }
+    
+    /* Mobile Menu Overlay - Default hidden state */
+    .main-nav .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        background: var(--color-token-white);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 80px 40px 40px 40px;
+        box-shadow: none;
+        transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 1001;
+        visibility: hidden;
+        overflow-y: auto;
+        list-style: none;
+        margin: 0;
+        display: flex; /* Always flex, but hidden off-screen */
+    }
+    
+    /* Mobile Menu Active State - Drawer effect */
+    .main-nav .menu.active {
+        left: 0;
+        visibility: visible;
+    }
+    
+    /* Mobile Menu Category Headers */
+    .main-nav .menu-item {
+        width: 100%;
+        margin-bottom: 30px;
+        transform: none !important;
+        transition: none;
+    }
+    
+    .main-nav .menu-item > a {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        font-weight: var(--typography-font-weight-medium);
+        color: var(--color-brand-secondary);
+        padding: 0 0 15px 0;
+        border-bottom: none;
+        width: 100%;
+        display: block;
+        text-align: left;
+        text-decoration: none;
+        z-index: auto;
+        background: none !important;
+        border-radius: 0;
+        white-space: normal;
+        margin-bottom: 10px;
+    }
+    
+    .main-nav .menu-item > a:hover {
+        color: var(--color-brand-primary);
+        background: none !important;
+        transform: none;
+    }
+    
+    /* Remove arrows from category headers */
+    .main-nav .menu-item > a::after {
+        display: none;
+    }
+    
+    /* Mobile Submenu Styles */
+    .main-nav .sub-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        background: none !important;
+        margin: 0;
+        padding: 0 0 0 20px;
+        border-radius: 0;
+        box-shadow: none;
+        width: 100%;
+        min-width: auto;
+        gap: 0;
+        flex-direction: column;
+        border-left: 2px solid var(--color-brand-primary);
+        padding-left: 20px;
+    }
+    
+    .main-nav .sub-menu .menu-item {
+        margin-bottom: 8px;
+        width: 100%;
+    }
+    
+    .main-nav .sub-menu a {
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        font-weight: var(--typography-font-weight-medium);
+        color: var(--color-text-body);
+        padding: 8px 0;
+        border-bottom: none;
+        margin-bottom: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        background: none !important;
+        text-align: left;
+        justify-content: space-between;
+    }
+    
+    /* Add arrows to individual submenu items */
+    .main-nav .sub-menu a::after {
+        content: '→';
+        color: var(--color-brand-primary);
+        font-size: 1rem;
+        margin-left: auto;
+        transition: transform 0.2s ease;
+    }
+    
+    .main-nav .sub-menu a::before {
+        display: none;
+    }
+    
+    .main-nav .sub-menu a:hover {
+        color: var(--color-brand-primary);
+        background: none !important;
+    }
+    
+    .main-nav .sub-menu a:hover::after {
+        transform: translateX(3px);
+    }
+    
+    /* Prevent body scroll when menu is open */
+    body.no-scroll {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-nav .menu {
+        padding: 60px 30px 30px 30px;
+    }
+    
+    .main-nav .menu-item > a {
+        font-size: 1.3rem;
+    }
+    
+    .main-nav .sub-menu {
+        padding-left: 15px;
+    }
+    
+    .main-nav .sub-menu a {
+        font-size: 0.9rem;
+        padding: 6px 0;
+    }
+} 
