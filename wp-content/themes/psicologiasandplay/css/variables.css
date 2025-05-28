@@ -8,12 +8,13 @@
     --border-radius-small: 8px;
 
     
-    --spacing-xlarge: 90px;
-    --spacing-xxlarge: 60px;
-    --spacing-large: 48px;
-    --spacing-medium: 24px;
-    --spacing-small: 12px;
-    --spacing-xs: 8px;
+    --spacing-xxlarge: 90px;
+    --spacing-xlarge: 60px;
+    --spacing-large: 45px;
+    --spacing-medium: 30px;
+    --spacing-small: 15px;
+    --spacing-xsmall: 10px;
+    --spacing-xxsmall: 5px;
 
     --container-width: 1200px;
     --container-xl: 1200px;

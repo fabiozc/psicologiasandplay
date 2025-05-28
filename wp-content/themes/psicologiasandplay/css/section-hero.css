@@ -2,7 +2,7 @@
 .hero-section {
     background: var(--gradient-hero);
     width: 100%;
-    padding: var(--spacing-xlarge) 0;
+    padding: var(--spacing-xxlarge) 0;
     /*min-height: 70vh;*/
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
 .hero-container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 var(--spacing-medium);
+    padding: 0 24px;
     width: 100%;
 }
 
@@ -19,8 +19,8 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: var(--spacing-xlarge);
-    margin-bottom: var(--spacing-xlarge);
+    gap: var(--spacing-xxlarge);
+    margin-bottom: var(--spacing-xxlarge);
 }
 
 .hero-left {
@@ -56,7 +56,7 @@
 .hero-quote-content {
     text-align: center;
     max-width: 850px;
-    margin: 0 auto var(--spacing-xlarge) auto;
+    margin: 0 auto var(--spacing-xxlarge) auto;
     font-family: var(--font-sans);
     font-size: var(--typography-font-size-hero);
     color: var(--color-brand-secondary);
@@ -84,12 +84,12 @@
 @media (max-width: 900px) {
     .hero-section {
         min-height: auto;
-        padding: var(--spacing-xxlarge) 0; /* 60px top/bottom */
+        padding: var(--spacing-xlarge) 0; /* Was xxlarge (60px), now xlarge (60px) */
     }
     
     .hero-top-content {
         flex-direction: column;
-        gap: var(--spacing-xxlarge); /* 60px gap */
+        gap: var(--spacing-xlarge); /* Was xxlarge (60px), now xlarge (60px) */
         align-items: center;
     }
     
@@ -113,8 +113,8 @@
     
     .hero-quote-content {
         font-size: 26px; /* Exact font size as requested */
-        margin-top: var(--spacing-xxlarge); /* 60px spacing */
-        margin-bottom: var(--spacing-xxlarge); /* 60px spacing */
+        margin-top: var(--spacing-xlarge); /* Was xxlarge (60px), now xlarge (60px) */
+        margin-bottom: var(--spacing-xlarge); /* Was xxlarge (60px), now xlarge (60px) */
     }
     
     .hero-quote-content p {
@@ -128,11 +128,11 @@
     }
     
     .hero-section {
-        padding: var(--spacing-xxlarge) 0; /* Keep 60px on smaller screens */
+        padding: var(--spacing-xlarge) 0; /* Was xxlarge (60px), now xlarge (60px) */
     }
     
     .hero-top-content {
-        gap: var(--spacing-xxlarge); /* Keep 60px gap */
+        gap: var(--spacing-xlarge); /* Was xxlarge (60px), now xlarge (60px) */
     }
     
     .hero-logo {
@@ -145,8 +145,8 @@
     
     .hero-quote-content {
         font-size: 24px; /* Slightly smaller on very small screens */
-        margin-top: var(--spacing-xxlarge);
-        margin-bottom: var(--spacing-xxlarge);
+        margin-top: var(--spacing-xlarge); /* Was xxlarge (60px), now xlarge (60px) */
+        margin-bottom: var(--spacing-xlarge); /* Was xxlarge (60px), now xlarge (60px) */
     }
     
     .hero-quote-content p {
