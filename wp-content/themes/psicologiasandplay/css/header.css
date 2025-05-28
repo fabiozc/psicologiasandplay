@@ -44,7 +44,7 @@
     display: flex;
     align-items: center;
     z-index: 1001;
-    margin-right: var(--spacing-xxlarge); /* 60px margin right on logo */
+    margin-right: var(--spacing-medium); /* 60px margin right on logo */
     padding: 20px 0 10px 0; /* Move padding here from site-header */
 }
 

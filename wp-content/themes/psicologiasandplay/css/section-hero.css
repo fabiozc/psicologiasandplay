@@ -84,12 +84,12 @@
 @media (max-width: 900px) {
     .hero-section {
         min-height: auto;
-        padding: var(--spacing-medium) 0;
+        padding: var(--spacing-xxlarge) 0; /* 60px top/bottom */
     }
     
     .hero-top-content {
         flex-direction: column;
-        gap: var(--spacing-medium);
+        gap: var(--spacing-xxlarge); /* 60px gap */
         align-items: center;
     }
     
@@ -100,18 +100,25 @@
         min-width: unset;
     }
     
+    /* Switch to horizontal logo on mobile */
     .hero-logo {
-        max-width: 220px;
+        content: url("../img/logo-horizontal.svg");
+        max-width: 320px; /* Mobile logo size */
     }
     
     .hero-photo {
-        max-width: 450px;
+        width: 100%; /* Full width of container */
+        max-width: none; /* Remove max-width restriction */
     }
     
     .hero-quote-content {
-        font-size: 24px;
-        margin-top: var(--spacing-medium);
-        margin-bottom: var(--spacing-medium);
+        font-size: 26px; /* Exact font size as requested */
+        margin-top: var(--spacing-xxlarge); /* 60px spacing */
+        margin-bottom: var(--spacing-xxlarge); /* 60px spacing */
+    }
+    
+    .hero-quote-content p {
+        font-size: 26px; /* Ensure paragraph also gets correct font size */
     }
 }
 
@@ -120,16 +127,30 @@
         padding: 0 16px;
     }
     
+    .hero-section {
+        padding: var(--spacing-xxlarge) 0; /* Keep 60px on smaller screens */
+    }
+    
+    .hero-top-content {
+        gap: var(--spacing-xxlarge); /* Keep 60px gap */
+    }
+    
     .hero-logo {
-        max-width: 180px;
+        max-width: 280px; /* Slightly smaller on very small screens but still reasonable */
     }
     
     .hero-photo {
-        max-width: 350px;
+        width: 100%; /* Maintain full width */
     }
     
     .hero-quote-content {
-        font-size: 20px;
+        font-size: 24px; /* Slightly smaller on very small screens */
+        margin-top: var(--spacing-xxlarge);
+        margin-bottom: var(--spacing-xxlarge);
+    }
+    
+    .hero-quote-content p {
+        font-size: 24px; /* Ensure paragraph also gets correct font size on small screens */
     }
 }
 
