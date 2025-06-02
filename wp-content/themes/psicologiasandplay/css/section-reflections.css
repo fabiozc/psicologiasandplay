@@ -1,12 +1,11 @@
 /* === REFLECTIONS SECTION === */
 .reflections-section {
     padding: 64px 0 56px 0;
-    background: var(--color-background-secondary);
+    background: linear-gradient(180deg, var(--color-background-primary) 0%, rgba(255, 255, 255, 0.00) 41.83%), linear-gradient(161deg, var(--color-light-detail) 25.26%, var(--color-token-cream) 65%), var(--color-token-cream);
 }
 
 .reflections-section .section-title {
     font-family: var(--font-serif);
-    font-size: var(--typography-font-size-large);
     color: var(--color-text-heading);
     font-weight: var(--typography-font-weight-semibold);
     margin-bottom: var(--spacing-large);
@@ -88,7 +87,7 @@
 
 .continue-reading-link {
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: inherit;
     color: var(--color-brand-primary);
     text-decoration: none;
     font-weight: var(--typography-font-weight-semibold);
@@ -140,7 +139,6 @@
     }
     
     .reflections-section .section-title {
-        font-size: 1.75rem;
         padding: 0 16px;
     }
     

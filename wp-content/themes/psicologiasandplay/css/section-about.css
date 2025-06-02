@@ -1,7 +1,8 @@
 /* === ABOUT SECTION === */
 .about-section {
-    padding: 64px 0 56px 0;
-    background: var(--color-background-primary);
+    padding: var(--spacing-xxxlarge) 0; /* 120px top (hero has 90px bottom) + 90px bottom = total spacing with quote */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), var(--color-light-detail);
+    padding-bottom: var(--spacing-large);
 }
 
 .about-section .section-title {
@@ -27,11 +28,12 @@
 }
 
 .about-text-content {
-    flex: 2;
+    flex: 1; /* 50% space for text */
     font-family: var(--font-sans);
     font-size: 1.15rem;
     color: var(--color-text-body);
     line-height: 1.6;
+    text-align: left;
 }
 
 .about-text-content p {
@@ -43,22 +45,19 @@
 }
 
 .about-image {
-    flex: 1;
+    flex: 1; /* 50% space for image */
     display: flex;
     justify-content: center;
 }
 
 .renata-photo {
-    max-width: 260px;
-    width: 100%;
-    border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow-depth-1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.renata-photo:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.15);
+    width: 500px;
+    height: 500px;
+    max-width: 100%;
+    border-radius: 250px;
+    border: 5px solid var(--Border-Photo, #FFF);
+    box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
 }
 
 /* Responsive Design */
@@ -73,18 +72,26 @@
         text-align: center;
     }
     
-    .about-image, 
-    .about-text-content {
+    .about-image {
+        order: -1; /* Move image to top */
         width: 100%;
         justify-content: center;
     }
     
     .about-text-content {
+        width: 100%;
         text-align: left;
     }
     
+    .about-links {
+        justify-content: center;
+        gap: var(--spacing-small); /* Reduce gap on mobile */
+    }
+    
     .renata-photo {
-        max-width: 220px;
+        width: 300px;
+        height: 300px;
+        border-radius: 150px;
     }
 }
 
@@ -109,7 +116,52 @@
         text-align: center;
     }
     
-    .renata-photo {
-        max-width: 200px;
+    .about-links {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xsmall); /* Even smaller gap on small mobile */
     }
+    
+    .about-link {
+        font-size: 1rem;
+    }
+    
+    .renata-photo {
+        width: 250px;
+        height: 250px;
+        border-radius: 125px;
+    }
+}
+
+/* === About Links === */
+.about-links {
+    display: flex;
+    gap: var(--spacing-medium);
+    margin-top: var(--spacing-medium);
+    flex-wrap: wrap;
+}
+
+.about-link {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    color: var(--color-brand-primary);
+    text-decoration: none;
+    font-weight: var(--typography-font-weight-medium);
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.about-link::after {
+    content: '→';
+    transition: transform 0.2s ease;
+}
+
+.about-link:hover {
+    color: var(--color-text-heading);
+}
+
+.about-link:hover::after {
+    transform: translateX(4px);
 } 

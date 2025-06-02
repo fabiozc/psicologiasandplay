@@ -1,6 +1,7 @@
 :root {
     --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --font-serif: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+    --font-script: 'Hurricane', cursive;
   
     --border-radius-large: 100px;
     --border-radius-hero: 30px;
@@ -8,6 +9,7 @@
     --border-radius-small: 8px;
 
     
+    --spacing-xxxlarge: 120px;
     --spacing-xxlarge: 90px;
     --spacing-xlarge: 60px;
     --spacing-large: 45px;
@@ -44,7 +46,7 @@
     --section-padding-mobile: 48px 0 40px 0;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(161deg, #FFEBD1 25.26%, #D2E8FF 76.43%);
+    --gradient-hero: linear-gradient(166deg, #FFEBD1 25.26%, #D2E8FF 76.43%);
 }
 
 /* Hide WordPress Admin Bar */

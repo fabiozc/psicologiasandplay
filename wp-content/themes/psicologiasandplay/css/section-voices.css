@@ -1,7 +1,7 @@
 /* === VOICES SECTION === */
 .voices-section {
     padding: 80px 0;
-    background: var(--color-background-secondary);
+    background: var(--color-background-primary);
 }
 
 .voices-section .section-title {
@@ -18,15 +18,12 @@
 }
 
 .voices-container {
-    max-width: 1000px;
+    max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 var(--spacing-medium);
 }
 
 .voice-item {
-    display: flex;
-    align-items: center;
-    gap: 60px;
     margin-bottom: 80px;
 }
 
@@ -34,77 +31,127 @@
     margin-bottom: 0;
 }
 
-/* Alternate layout for even items (Dora Kalff) */
-.voice-item:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.voice-image {
-    flex-shrink: 0;
-}
-
-.voice-image img {
-    width: 280px;
-    height: 280px;
-    border-radius: 40px;
-    object-fit: cover;
-    box-shadow: var(--shadow-depth-1);
-}
-
-.voice-content {
-    flex: 1;
-    max-width: 500px;
-}
-
 .voice-name {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    font-weight: var(--typography-font-weight-regular);
-    margin-bottom: 24px;
-    line-height: 1.1;
-}
-
-/* Style for Carl Jung - "Carl" in brown, "Jung" in orange */
-.voice-item:first-child .voice-name {
+    font-family: var(--font-sans);
+    font-size: 60px;
+    font-weight: var(--typography-font-weight-semibold);
     color: var(--color-text-heading);
+    margin-bottom: -45px;
+    padding: 0 var(--spacing-xlarge);
+    padding-bottom: 24px;
+    line-height: 1.1;
+    display: flex;
+    align-items: baseline;
+    gap: 0.2em;
+    letter-spacing: -0.03rem;
+    position: relative;
+    z-index: 2;
 }
 
+/* Hurricane font for last names */
 .voice-item:first-child .voice-name::after {
     content: "Jung";
+    font-family: var(--font-script);
+    font-size: 110px;
+    font-weight: 400;
     color: var(--color-brand-primary);
-    font-style: italic;
-}
-
-/* Style for Dora Kalff - "Dora" in brown, "Kalff" in orange */
-.voice-item:nth-child(2) .voice-name {
-    color: var(--color-text-heading);
+    margin-left: -10px;
 }
 
 .voice-item:nth-child(2) .voice-name::after {
     content: "Kalff";
+    font-family: var(--font-script);
+    font-size: 110px;
+    font-weight: 400;
     color: var(--color-brand-primary);
-    font-style: italic;
+    margin-left: -10px;
 }
 
-.voice-description {
+/* Two-column layout: Image and Title+Content */
+.voice-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 0;
+    align-items: end;
+}
+
+/* Jung Layout - Image on left, title+content on right */
+.voice-item:first-child .voice-layout {
+    grid-template-columns: 400px 1fr;
+}
+
+/* Kalff Layout - Title+content on left, image on right */
+.voice-item:nth-child(2) .voice-layout {
+    grid-template-columns: 1fr 400px;
+}
+
+.voice-image {
+    width: 400px;
+    height: 400px;
+}
+
+/* Jung Image - Bottom right corner 0px */
+.voice-item:first-child .voice-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 60px 60px 0 60px;
+    box-shadow: var(--shadow-depth-1);
+}
+
+/* Kalff Image - Bottom left corner 0px */
+.voice-item:nth-child(2) .voice-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 60px 60px 60px 0;
+    box-shadow: var(--shadow-depth-1);
+}
+
+/* Title and Content Container */
+.voice-title-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--spacing-medium);
+}
+
+.voice-content {
+    background: var(--color-background-secondary);
+    padding: var(--spacing-xlarge);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    flex: 1;
     font-family: var(--font-sans);
     font-size: 1.125rem;
     color: var(--color-text-body);
     line-height: 1.6;
-    margin-bottom: 24px;
 }
 
-.voice-description p {
+.voice-content p {
     margin-bottom: 1em;
 }
 
-.voice-description p:last-child {
+.voice-content p:last-child {
     margin-bottom: 0;
+}
+
+/* Jung Content - Left borders 0px, border-left light blue */
+.voice-item:first-child .voice-content {
+    border-radius: 0 60px 60px 0;
+    border-left: 10px solid var(--color-light-detail);
+}
+
+/* Kalff Content - Right borders 0px, border-right light blue */
+.voice-item:nth-child(2) .voice-content {
+    border-radius: 60px 0 0 60px;
+    border-right: 10px solid var(--color-light-detail);
 }
 
 .continue-reading-link {
     font-family: var(--font-sans);
-    font-size: 1.125rem;
+    font-size: inherit;
     color: var(--color-brand-primary);
     text-decoration: none;
     font-weight: var(--typography-font-weight-medium);
@@ -138,27 +185,64 @@
         margin-bottom: 40px;
     }
     
-    .voice-item,
-    .voice-item:nth-child(even) {
+    .voice-layout,
+    .voice-item:first-child .voice-layout,
+    .voice-item:nth-child(2) .voice-layout {
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 40px;
-        margin-bottom: 60px;
-    }
-    
-    .voice-image img {
-        width: 220px;
-        height: 220px;
-        border-radius: 30px;
+        gap: 0;
     }
     
     .voice-name {
-        font-size: 2.5rem;
+        font-size: 36px;
+        justify-content: center;
+        text-align: center;
+        padding: 0 var(--spacing-medium);
+        margin-bottom: 0;
+        order: 2;
     }
     
-    .voice-description {
-        font-size: 1.1rem;
+    .voice-item:first-child .voice-name::after,
+    .voice-item:nth-child(2) .voice-name::after {
+        font-size: 65px;
+        margin-left: -5px;
+    }
+    
+    .voice-image {
+        width: 280px;
+        height: 280px;
+        order: 1;
+        margin-bottom: 0;
+    }
+    
+    .voice-item:first-child .voice-image img,
+    .voice-item:nth-child(2) .voice-image img {
+        border-radius: 40px;
+    }
+    
+    .voice-title-content {
+        order: 2;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .voice-content {
+        order: 3;
+        width: 100%;
+        margin-top: 0;
+        padding: var(--spacing-large);
+        text-align: left;
+    }
+    
+    .voice-item:first-child .voice-content,
+    .voice-item:nth-child(2) .voice-content {
+        border-radius: 0 0 40px 40px;
+        border-left: none;
+        border-right: none;
+        border-top: 8px solid var(--color-light-detail);
     }
 }
 
@@ -178,27 +262,36 @@
     }
     
     .voice-item {
-        gap: 32px;
         margin-bottom: 48px;
     }
     
-    .voice-image img {
-        width: 180px;
-        height: 180px;
-        border-radius: 24px;
-    }
-    
     .voice-name {
-        font-size: 2rem;
-        margin-bottom: 20px;
+        font-size: 28px;
+        margin-bottom: 0;
+        padding: 0 16px;
     }
     
-    .voice-description {
+    .voice-item:first-child .voice-name::after,
+    .voice-item:nth-child(2) .voice-name::after {
+        font-size: 50px;
+        margin-left: -3px;
+    }
+    
+    .voice-image {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .voice-title-content {
+        width: 100%;
+    }
+    
+    .voice-content {
+        padding: var(--spacing-medium) var(--spacing-small);
         font-size: 1rem;
-        margin-bottom: 20px;
     }
     
     .continue-reading-link {
-        font-size: 1rem;
+        font-size: inherit;
     }
 } 

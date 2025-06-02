@@ -1,14 +1,14 @@
 /* === WHAT IS SANDPLAY SECTION === */
 .what-is-sandplay-section {
-    padding: 64px 0 56px 0;
-    background: var(--color-background-secondary);
+    padding: var(--spacing-xxlarge) 0; /* 90px top and bottom for consistent spacing */
+    background: var(--color-background); /* Changed to white background */
 }
 
 .what-is-sandplay-section .section-title {
     font-family: var(--font-serif);
     font-size: var(--typography-font-size-large);
     color: var(--color-text-heading);
-    font-weight: var(--typography-font-weight-semibold);
+    font-weight: var(--typography-font-weight-light); /* Use light weight like other headings */
     margin-bottom: var(--spacing-medium);
     text-align: left;
     max-width: var(--container-width);
@@ -24,15 +24,16 @@
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 var(--spacing-medium);
-    flex-direction: row-reverse; /* Image on left, text on right */
+    flex-direction: row; /* Changed from row-reverse to show text on left, image on right */
 }
 
 .sandplay-text-content {
-    flex: 2;
+    flex: 1; /* 50% space for text */
     font-family: var(--font-sans);
     font-size: 1.15rem;
     color: var(--color-text-body);
     line-height: 1.6;
+    text-align: left;
 }
 
 .sandplay-text-content p {
@@ -44,22 +45,47 @@
 }
 
 .sandplay-image {
-    flex: 1;
+    flex: 1; /* 50% space for image */
     display: flex;
     justify-content: center;
 }
 
 .sandplay-photo {
-    max-width: 260px;
-    width: 100%;
-    border-radius: var(--border-radius-medium);
-    box-shadow: var(--shadow-depth-1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 600px;
+    height: 600px;
+    max-width: 100%;
+    border-radius: var(--border-radius-hero); /* Use hero border radius (30px) */
+    border: 5px solid var(--color-token-white); /* Same as hero image */
+    box-shadow: var(--shadow-hero); /* Same shadow as hero */
+    object-fit: cover;
+    /* Removed hover transition and effects */
 }
 
-.sandplay-photo:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.15);
+/* Add link styling similar to about section */
+.sandplay-link {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    color: var(--color-brand-primary);
+    text-decoration: none;
+    font-weight: var(--typography-font-weight-medium);
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: var(--spacing-medium);
+}
+
+.sandplay-link::after {
+    content: '→';
+    transition: transform 0.2s ease;
+}
+
+.sandplay-link:hover {
+    color: var(--color-text-heading);
+}
+
+.sandplay-link:hover::after {
+    transform: translateX(4px);
 }
 
 /* Responsive Design */
@@ -74,18 +100,21 @@
         text-align: center;
     }
     
-    .sandplay-image, 
-    .sandplay-text-content {
+    .sandplay-image {
+        order: -1; /* Move image to top on mobile */
         width: 100%;
         justify-content: center;
     }
     
     .sandplay-text-content {
+        width: 100%;
         text-align: left;
     }
     
     .sandplay-photo {
-        max-width: 220px;
+        width: 400px;
+        height: 400px;
+        max-width: 100%;
     }
 }
 
@@ -111,6 +140,8 @@
     }
     
     .sandplay-photo {
-        max-width: 200px;
+        width: 300px;
+        height: 300px;
+        max-width: 100%;
     }
 } 
