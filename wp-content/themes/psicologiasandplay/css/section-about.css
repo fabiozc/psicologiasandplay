@@ -2,7 +2,7 @@
 .about-section {
     padding: var(--spacing-xxxlarge) 0; /* 120px top (hero has 90px bottom) + 90px bottom = total spacing with quote */
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), var(--color-light-detail);
-    padding-bottom: var(--spacing-large);
+    padding-bottom: 120px;
 }
 
 .about-section .section-title {

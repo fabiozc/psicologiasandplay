@@ -172,79 +172,63 @@ get_header();
         <h2 class="section-title">Reflexões e aprofundamento</h2>
         <div class="reflections-grid">
             <?php
-                // Get the "artigos" page by slug
-                $artigos_page = get_page_by_path('artigos');
+                // Use the specific "artigos" page ID
+                $artigos_page_id = 10;
                 
-                if ($artigos_page) {
-                    // Query for child pages of "artigos"
-                    $args = array(
-                        'post_type' => 'page',
-                        'post_parent' => $artigos_page->ID,
-                        'posts_per_page' => -1,
-                        'post_status' => 'publish',
-                        'orderby' => 'menu_order',
-                        'order' => 'ASC'
-                    );
-                    
-                    $child_pages = new WP_Query($args);
-                    
-                    if ($child_pages->have_posts()) {
-                        while ($child_pages->have_posts()) {
-                            $child_pages->the_post();
-                            
-                            // Get featured image or fallback
-                            $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'medium');
-                            if (!$featured_image) {
-                                $featured_image = get_template_directory_uri() . '/img/default-article.png';
-                            }
-                            
-                            // Get excerpt or content preview
-                            $excerpt = get_the_excerpt();
-                            if (!$excerpt) {
-                                $excerpt = wp_trim_words(get_the_content(), 20, '...');
-                            }
-                            ?>
-                            <div class="reflection-item">
-                                <div class="reflection-image">
-                                    <img src="<?= esc_url($featured_image); ?>" alt="<?php the_title_attribute(); ?>" class="reflection-photo">
-                                </div>
-                                <h3 class="reflection-title"><?php the_title(); ?></h3>
-                                <div class="reflection-description">
-                                    <p><?= esc_html($excerpt); ?></p>
-                                </div>
-                                <a href="<?php the_permalink(); ?>" class="continue-reading-link">Continue Lendo</a>
-                            </div>
-                            <?php
+                // Query for child pages of "artigos"
+                $args = array(
+                    'post_type' => 'page',
+                    'post_parent' => $artigos_page_id,
+                    'posts_per_page' => -1,
+                    'post_status' => 'publish',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
+                
+                $child_pages = new WP_Query($args);
+                
+                if ($child_pages->have_posts()) {
+                    while ($child_pages->have_posts()) {
+                        $child_pages->the_post();
+                        
+                        // Get featured image or fallback
+                        $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+                        if (!$featured_image) {
+                            $featured_image = get_template_directory_uri() . '/img/default-article.png';
                         }
-                        wp_reset_postdata();
-                    } else {
-                        // Fallback if no child pages found
+                        
+                        // Get excerpt or content preview
+                        $excerpt = get_the_excerpt();
+                        if (!$excerpt) {
+                            $excerpt = wp_trim_words(get_the_content(), 20, '...');
+                        }
                         ?>
-                        <div class="reflection-item">
+                        <a href="<?php the_permalink(); ?>" class="reflection-item">
                             <div class="reflection-image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/default-article.png" alt="Artigo em breve" class="reflection-photo">
+                                <img src="<?= esc_url($featured_image); ?>" alt="<?php the_title_attribute(); ?>" class="reflection-photo">
                             </div>
-                            <h3 class="reflection-title">Artigos em breve</h3>
+                            <h3 class="reflection-title"><?php the_title(); ?></h3>
                             <div class="reflection-description">
-                                <p>Novos artigos e reflexões sobre Sandplay estarão disponíveis em breve.</p>
+                                <p><?= esc_html($excerpt); ?></p>
                             </div>
-                            <a href="<?= esc_url(get_permalink($artigos_page->ID)); ?>" class="continue-reading-link">Visite a seção</a>
-                        </div>
+                            <div class="continue-reading-link">Continue Lendo</div>
+                        </a>
                         <?php
                     }
+                    wp_reset_postdata();
                 } else {
-                    // Fallback if "artigos" page doesn't exist
+                    // Fallback if no child pages found
                     ?>
-                    <div class="reflection-item">
+                    <a href="<?= esc_url(get_permalink($artigos_page_id)); ?>" class="reflection-item">
                         <div class="reflection-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/default-article.png" alt="Conteúdo em desenvolvimento" class="reflection-photo">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/default-article.png" alt="Artigo em breve" class="reflection-photo">
                         </div>
-                        <h3 class="reflection-title">Conteúdo em desenvolvimento</h3>
+                        <h3 class="reflection-title">Artigos em breve</h3>
                         <div class="reflection-description">
-                            <p>Esta seção está sendo preparada com cuidado para oferecer reflexões profundas sobre Sandplay.</p>
+                            <p>Novos artigos e reflexões sobre Sandplay estarão disponíveis em breve.</p>
                         </div>
-                        <a href="#" class="continue-reading-link">Em breve</a>
-                    </div>
+                        <div class="continue-reading-link">Visite a seção</div>
+                    </a>
                     <?php
                 }
             ?>

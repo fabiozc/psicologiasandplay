@@ -8,6 +8,9 @@
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
     add_theme_support('editor-styles'); // Gutenberg
+    
+    // Enable excerpts for pages
+    add_post_type_support('page', 'excerpt');
 }
 add_action('after_setup_theme', 'psicologia_sandplay_setup');
 
@@ -47,3 +50,30 @@ function mytheme_enqueue_styles() {
     wp_enqueue_style('theme-style', get_stylesheet_uri(), [], microtime());
 }
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');
+add_theme_support('post-thumbnails');
+
+// Ensure featured image meta box is visible for pages
+function add_featured_image_to_pages() {
+    add_meta_box(
+        'postimagediv',
+        __('Featured Image'),
+        'post_thumbnail_meta_box',
+        'page',
+        'side',
+        'low'
+    );
+}
+add_action('add_meta_boxes', 'add_featured_image_to_pages');
+
+// Add excerpt meta box to pages
+function add_excerpt_to_pages() {
+    add_meta_box(
+        'postexcerpt',
+        __('Excerpt'),
+        'post_excerpt_meta_box',
+        'page',
+        'normal',
+        'core'
+    );
+}
+add_action('add_meta_boxes', 'add_excerpt_to_pages');
