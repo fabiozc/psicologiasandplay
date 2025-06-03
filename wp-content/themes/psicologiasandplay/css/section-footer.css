@@ -161,7 +161,7 @@
 }
 
 .footer-submit-btn {
-    align-self: flex-end;
+    align-self: stretch;
     background: var(--color-brand-primary);
     color: var(--color-text-inverse);
     font-family: var(--font-sans);
@@ -202,13 +202,13 @@
 }
 
 .footer-bottom a:hover {
-    color: var(--color-text-inverse);
-    text-decoration: underline;
+    color: var(--color-token-cream);
 }
 
 /* Responsive Design */
 @media (max-width: 900px) {
     .footer-logo-container {
+        margin-bottom: -100px;
         transform: translateY(-100px);
     }
     
@@ -218,28 +218,26 @@
     
     .footer-content {
         grid-template-columns: 1fr;
-        gap: var(--spacing-xlarge);
-        text-align: center;
+        gap: var(--spacing-large);
+        padding: var(--spacing-large) 0;
     }
     
     .footer-left {
-        align-items: center;
         order: 2;
     }
     
     .footer-right {
-        justify-content: center;
         order: 1;
+        justify-content: center;
     }
     
     .footer-name {
         font-size: 28px;
-        text-align: center;
     }
     
     .contact-item {
-        justify-content: center;
-        text-align: left;
+        align-items: center;
+        gap: var(--spacing-small);
     }
     
     .contact-text p {
@@ -247,29 +245,28 @@
     }
     
     .footer-submit-btn {
-        align-self: center;
+        align-self: stretch;
     }
     
     .footer-bottom {
         flex-direction: column;
         gap: var(--spacing-small);
         text-align: center;
-        font-size: 0.75rem;
     }
     
     .footer-bottom p {
-        color: var(--color-token-cream);
+        font-size: 0.75rem;
     }
 }
 
 @media (max-width: 600px) {
     .footer-container {
-        padding: 0 var(--spacing-small);
+        padding: 0 16px;
     }
     
     .footer-logo-container {
+        margin-bottom: -90px;
         transform: translateY(-90px);
-        margin-bottom: var(--spacing-medium);
     }
     
     .footer-logo {
@@ -277,7 +274,8 @@
     }
     
     .footer-content {
-        gap: var(--spacing-large);
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xxxlarge);
         padding: var(--spacing-large) 0;
     }
     
@@ -286,10 +284,8 @@
     }
     
     .contact-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: var(--spacing-xsmall);
+        align-items: flex-start;
+        gap: var(--spacing-small);
     }
     
     .contact-text p {
@@ -297,7 +293,7 @@
     }
     
     .footer-form {
-        gap: var(--spacing-small);
+        width: 100%;
     }
     
     .footer-form input,
@@ -306,17 +302,17 @@
     }
     
     .footer-submit-btn {
-        font-size: 0.9rem;
-        padding: var(--spacing-xsmall) var(--spacing-medium);
+        align-self: stretch;
+        padding: var(--spacing-small) var(--spacing-large);
     }
     
     .footer-bottom {
-        font-size: 0.7rem;
-        padding: var(--spacing-small) 0;
+        flex-direction: column;
+        gap: var(--spacing-small);
     }
     
     .footer-bottom p {
-        color: var(--color-token-cream);
+        font-size: 0.7rem;
     }
 }
   

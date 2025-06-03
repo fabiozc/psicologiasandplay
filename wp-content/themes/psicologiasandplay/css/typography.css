@@ -142,10 +142,6 @@
       line-height: 1.2;
     }
   
-    p {
-      max-width: 60ch;
-    }
-  
     .heading-xl {
       letter-spacing: -0.02em;
     }

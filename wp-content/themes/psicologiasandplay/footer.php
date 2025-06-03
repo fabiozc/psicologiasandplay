@@ -1,4 +1,4 @@
-    <footer class="site-footer">
+    <footer class="site-footer" id="contato">
         <div class="footer-container">
             <!-- Logo positioned with negative margin -->
             <div class="footer-logo-container">
